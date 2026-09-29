@@ -1,0 +1,12 @@
+<anvil-form container="FlowPanel">
+  <article class="scanner-result-card">
+    <div class="scanner-result-topline">
+      <anvil-component type="Label" name="site_label" bind:text="self.item['site_name']" prop:role="scanner-result-site"></anvil-component>
+      <anvil-component type="Label" name="status_label" bind:text="self.item['status']" prop:role="scanner-result-status"></anvil-component>
+    </div>
+    <anvil-component type="Label" name="category_label" bind:text="self.item['category']" prop:role="scanner-result-category"></anvil-component>
+    <anvil-component type="Label" name="reason_label" bind:text="self.item['reason']" prop:role="scanner-result-reason"></anvil-component>
+    <anvil-component type="Label" name="extra_label" bind:text="self.item['extra_summary']" prop:role="scanner-result-extra"></anvil-component>
+    <anvil-component type="Label" name="url_label" bind:text="self.item['url']" prop:role="scanner-result-url"></anvil-component>
+  </article>
+</anvil-form>

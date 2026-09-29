@@ -1,3 +1,4 @@
+name: user-scanner
 native_deps:
   head_html: |2
 

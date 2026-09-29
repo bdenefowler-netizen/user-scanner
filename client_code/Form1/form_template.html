@@ -1,4 +1,62 @@
-<center style="font-style:italic; color:#888; margin: 3em;">
-  (Edit this HTML in the HTML pane)
-</center>
-<anvil-dropzone name="default"></anvil-dropzone>
+<anvil-form container="ColumnPanel">
+  <main class="scanner-page">
+    <div class="scanner-frame">
+      <header class="scanner-header">
+        <div class="scanner-mark" aria-hidden="true">US</div>
+        <div>
+          <p class="scanner-kicker">IDENTITY RESEARCH TOOL</p>
+          <h1>User Scanner</h1>
+          <p class="scanner-intro">Check a username or email against a selected platform and review the result.</p>
+        </div>
+      </header>
+
+      <section class="scanner-panel" aria-label="New scan">
+        <div class="scanner-panel-heading">
+          <div>
+            <p class="scanner-kicker">NEW CHECK</p>
+            <h2>Choose what to scan</h2>
+          </div>
+          <span class="scanner-private-tag">SINGLE PLATFORM</span>
+        </div>
+
+        <div class="scanner-form-grid">
+          <div class="scanner-field">
+            <label for="mode_dropdown">Scan type</label>
+            <anvil-component type="DropDown" name="mode_dropdown" prop:role="scanner-choice"></anvil-component>
+          </div>
+          <div class="scanner-field">
+            <label for="target_box">Username or email</label>
+            <anvil-component type="TextBox" name="target_box" prop:placeholder="e.g. alexrivera or alex@example.com" prop:role="scanner-input"></anvil-component>
+          </div>
+          <div class="scanner-field">
+            <label for="category_dropdown">Category</label>
+            <anvil-component type="DropDown" name="category_dropdown" prop:role="scanner-choice"></anvil-component>
+          </div>
+          <div class="scanner-field">
+            <label for="module_dropdown">Platform</label>
+            <anvil-component type="DropDown" name="module_dropdown" prop:role="scanner-choice"></anvil-component>
+          </div>
+        </div>
+
+        <div class="scanner-actions">
+          <anvil-component type="Button" name="scan_button" prop:text="Run check" prop:role="scanner-primary"></anvil-component>
+          <anvil-component type="Label" name="status_label" prop:role="scanner-status"></anvil-component>
+        </div>
+        <p class="scanner-footnote">Email checks that may send a notification are skipped automatically. Use this tool only for checks you are authorized to perform.</p>
+      </section>
+
+      <section class="scanner-results-section" aria-label="Scan results">
+        <div class="scanner-results-heading">
+          <div>
+            <p class="scanner-kicker">REPORT</p>
+            <h2>Results</h2>
+          </div>
+          <span class="scanner-results-note">One result per check</span>
+        </div>
+        <anvil-component type="RepeatingPanel" name="results_panel" prop:item_template="Form1.ResultRow" prop:role="scanner-results"></anvil-component>
+      </section>
+
+      <footer class="scanner-footer">User Scanner · Results can change as platforms update their systems.</footer>
+    </div>
+  </main>
+</anvil-form>
